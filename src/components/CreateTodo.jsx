@@ -1,8 +1,9 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export const CreateTodo = () => {
+  const router = useRouter();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
 
@@ -13,10 +14,9 @@ export const CreateTodo = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify([{ title, content, isdone: "true" }]),
-    })
+    });
     const data = res.json();
-    console.log(data);
-    // return data;
+    router.refresh();
   }
   return (
     <div className="space-y-4">

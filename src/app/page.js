@@ -1,6 +1,9 @@
+// "use client"
+
 import react from "react";
-import { TodoList } from "../components/todolist/component/TodoList";
-import { CreateTodo } from "../components/todolist/component/CreateTodo";
+import { TodoList } from "../components/TodoList";
+import { CreateTodo } from "../components/CreateTodo";
+export const dynamic = "force-dynamic";
 
 
 async function getData() {
@@ -19,21 +22,22 @@ async function getData() {
 
 export default async function Home() {
   const { data } = await getData();
-  // console.log(data);
   return (
     <main className="p-16 space-y-16">
-      {/* <div>
+      {/* <div className=" bg-slate-300">
         {data.map((item) => {
-          <div>
+
+          return (< div >
             {" "}
-            {item.title},{item.content}{" "}
-          </div>;
+            {item.title}, {item.content}{" "}
+          </div>)
         })}
+
       </div> */}
 
       <CreateTodo />
-       <TodoList data={data} />
+      <TodoList data={data}/>
 
-    </main>
+    </main >
   )
 }
