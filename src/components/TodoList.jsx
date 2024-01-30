@@ -1,19 +1,14 @@
 "use client";
 
 import react from "react";
+import Todo from "./Todo";
 export const dynamic = "force-dynamic";
 
 export const TodoList = ({ data }) => {
   return (
     <div>
       {data.map((item) => {
-        return (
-          <div key={item._id}>
-            
-            {" "}
-            {item.title},{item.content}{" "}
-          </div>
-        );
+        return <Todo key={item._id} item={item} />;
       })}
     </div>
   );
