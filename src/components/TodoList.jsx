@@ -8,8 +8,9 @@ export const TodoList = ({ data }) => {
   return (
     <div>
       {data.map((item) => {
-        return <Todo key={item._id} item={item} />;
-      })}
+        return <Todo key={item._id}  item={item} />;
+      })}  
+      
     </div>
   );
 };

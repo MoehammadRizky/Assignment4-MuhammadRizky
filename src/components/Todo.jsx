@@ -68,19 +68,21 @@ const Todo = ({ item }) => {
       key={item._id}
       className="m-3 p-[5px] bg-yellow-400 flex items-center rounded-xl justify-between "
     >
-      {" "}
-      {item.title},{item.content}{" "}
-      <div className="space-x-4">
+      {"Title: "}
+      {item.title} <br></br>
+      <br></br> {item.content}{" "}
+      <div className="">
         <button
           onClick={() => {
             setEditMode(true);
           }}
-          className="bg-blue-600 p-1 rounded-xl"
+          className="bg-blue-600 p-2 rounded-xl "
         >
-          update
+          Update
         </button>
-        <button onClick={TodoDelete} className="bg-red-600 p-1 rounded-xl">
-          delete
+        <br></br>
+        <button onClick={TodoDelete} className="bg-red-600 rounded-xl px-3 py-2">
+          Delete
         </button>
       </div>
     </div>
